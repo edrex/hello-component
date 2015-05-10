@@ -18,9 +18,7 @@
     }
   },
   "devDependencies": {
-    "babel": "^5.2.17",
     "chai": "^2.3.0",
-    "es6-module-loader": "^0.16.6",
     "karma": "^0.12.31",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^0.1.9",
@@ -28,9 +26,7 @@
     "karma-mocha": "^0.1.10",
     "karma-mocha-reporter": "^1.0.2",
     "karma-sauce-launcher": "^0.2.11",
-    "karma-systemjs": "^0.3.0",
     "mocha": "^2.2.4",
-    "systemjs": "^0.16.11",
     "which": "^1.0.9"
   }
 }

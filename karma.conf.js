@@ -7,37 +7,15 @@ module.exports = function(config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
-
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['systemjs', 'mocha', 'chai'],
+    frameworks: ['jspm', 'mocha', 'chai'],
 
-    systemjs: {
-        // Path to your SystemJS configuration file
-        configFile: 'system.conf.js',
-
-        // File patterns for your application code, dependencies, and test suites
-        files: [
-            'lib/**/*.js',
-            'test/**/*.js',
-            'jspm_packages/**/*',
-        ],
-
-        // SystemJS configuration specifically for tests, added after your config file.
-        // Good for adding test libraries and mock modules
-        config: {
-            transpiler: 'babel',
-            paths: {
-                "*.css!": 'test/empty'
-                // 'angular-mocks': 'bower_components/angular-mocks/angular-mocks.js'
-            },
-            map: {
-              'css': 'test/noopPlugin'
-            }
-        },
-
-        // Specify the suffix used for test suite file names.  Defaults to .test.js, .spec.js, _test.js, and _spec.js
-        // testFileSuffix: '.spec.js'
+    jspm: {
+        // Edit this to your needs
+        config: "system.conf.js",
+        loadFiles: ['test/**/*.spec.js'],
+        serveFiles: ['lib/**/*']
     },
 
     // list of files / patterns to load in the browser
