@@ -1,4 +1,5 @@
 {
+  "name": "hello-component",
   "jspm": {
     "main": "index.js",
     "format": "es6",
