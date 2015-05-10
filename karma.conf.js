@@ -1,3 +1,6 @@
+var pkg = require('./package.json');
+var capabilities = require('./test/sauce_labs_capabilities.js').capabilities;
+
 module.exports = function(config) {
   var configuration = {
 
@@ -86,7 +89,16 @@ module.exports = function(config) {
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false
+
   };
+
+  if(process.env.TRAVIS){
+    configuration.customLaunchers = capabilities;
+    configuration.browsers = Object.keys(capabilities);
+    configuration.sauceLabs = {
+        testName: pkg.name + ' unit test'
+    }
+  }
 
   config.set(configuration);
 };
